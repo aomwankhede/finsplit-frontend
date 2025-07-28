@@ -69,13 +69,11 @@ onMounted(async () => {
     try {
         const resp1 = await makeRequest('GET', '/transaction/give-money');
         const resp2 = await makeRequest('GET', '/transaction/get-money');
-        console.log(resp1 , resp2)
         let arr2 = []
         let arr1 = resp1.map(e => { return { userName: e.id, amount: e.amount } })
         for (const key in resp2) {
             arr2.push({ "userName": key, "amount": resp2[key] })
         }
-        console.log(arr1 , arr2)
         giveList.value = arr1;
         getList.value = arr2;
     } catch (err) {

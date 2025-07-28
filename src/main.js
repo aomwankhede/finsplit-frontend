@@ -8,10 +8,8 @@ import Aura from '@primeuix/themes/aura';
 import { createWebHistory , createRouter } from 'vue-router';
 import About from './components/About.vue';
 import Contact from './components/Contact.vue';
-import Home from './components/HomeWithoutLogin.vue';
-import HomeWithLogin from './components/HomeWithLogin.vue';
+import Home from './components/Home.vue';
 import Form from './components/Form.vue';
-import { store } from './store/store';
 import SettleForm from './components/SettleForm.vue';
 import ExpenseForm from './components/ExpenseForm.vue';
 
@@ -28,7 +26,7 @@ app.use(PrimeVue, {
 
 const routes = [
   { path: '/about', component: About },
-  { path: '/', component: (!store.isLoggedIn)?Home:HomeWithLogin }, // why reload has to be done after state change
+  { path: '/', component: Home },
   { path: '/contact', component: Contact },
   { path: '/login', component: Form },
   { path: '/pay', component: SettleForm },

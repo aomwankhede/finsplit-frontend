@@ -37,7 +37,7 @@ const handleSubmit = async() => {
             amount:String(amount.value),
             result:"true"  //by default transaction will always be successful
         },{});
-        console.log(respBody)
+        store.currUser = await makeRequest('GET','/users');
         alert(respBody)
         router.push('/')
     }
