@@ -8,7 +8,7 @@ const makeRequest = async (
 ): Promise<any> => {
   try {
     // const BASE_URL = 'http://localhost:8080';
-    const BASE_URL = 'https://a08c3af752b0.ngrok-free.app';
+    const BASE_URL = 'https://fda0251d97e6.ngrok-free.app/';
     const url = BASE_URL + path;
     const tok_n = await localStorage.getItem('token');
     if (tok_n) {
